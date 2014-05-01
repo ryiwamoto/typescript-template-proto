@@ -41,13 +41,26 @@ module MustacheTS{
 
     export interface ITemplateContext{
         contextType: string;
+        reference: string;
         nodes: INode[];
     }
 
-    export function generate(templateContext: ITemplateContext): string{
-        return generateInit(templateContext.contextType, templateContext.nodes.map(function(node){
+    export interface ICompileResult{
+        contextType: string;
+        reference: string;
+        compiled:string;
+    }
+
+    export function generate(templateContext: ITemplateContext): ICompileResult{
+        var compiled:string = generateInit(templateContext.contextType, templateContext.nodes.map(function(node){
             return walk(node);
         }).filter(b => {return !!b}).join(';'));
+
+        return {
+            contextType: templateContext.contextType,
+            reference: templateContext.reference,
+            compiled: compiled
+        };
     }
 
     function generateInit(contextType: string, code:string):string{

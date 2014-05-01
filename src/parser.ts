@@ -44,6 +44,7 @@ module MustacheTS{
             //parse node
             return {
                 contextType: contextType,
+                reference: reference,
                 nodes: this.toINode(tokens, [new MustacheTS.Scope(contextType)])
             };
         }
