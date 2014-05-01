@@ -32,4 +32,4 @@ Icon
 
 
 node_modules
-*.d.ts
+typings
