@@ -2,7 +2,7 @@
   "name": "typescript-template-proto",
   "version": "0.0.1",
   "description": "prototype of TypeScript template engine",
-  "main": "bin/mustache_ts",
+  "main": "bin/mustache_ts.js",
   "scripts": {
     "test": "test"
   },
