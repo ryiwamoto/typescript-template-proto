@@ -42,11 +42,17 @@ var MustacheTS;
     var NodeType = MustacheTS.NodeType;
 
     function generate(templateContext) {
-        return generateInit(templateContext.contextType, templateContext.nodes.map(function (node) {
+        var compiled = generateInit(templateContext.contextType, templateContext.nodes.map(function (node) {
             return walk(node);
         }).filter(function (b) {
             return !!b;
         }).join(';'));
+
+        return {
+            contextType: templateContext.contextType,
+            reference: templateContext.reference,
+            compiled: compiled
+        };
     }
     MustacheTS.generate = generate;
 
@@ -76920,6 +76926,7 @@ var MustacheTS;
             //parse node
             return {
                 contextType: contextType,
+                reference: reference,
                 nodes: this.toINode(tokens, [new MustacheTS.Scope(contextType)])
             };
         };
