@@ -1,7 +1,7 @@
 {
-  "name": "mustache.ts",
+  "name": "typescript-template-proto",
   "version": "0.0.1",
-  "description": "TypeScript implemention of mustache",
+  "description": "prototype of TypeScript template engine",
   "main": "bin/mustache_ts",
   "scripts": {
     "test": "test"
