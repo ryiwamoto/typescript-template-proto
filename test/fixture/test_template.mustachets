@@ -1,0 +1,10 @@
+{{!reference="./test_file_b.ts"}}
+{{!context:TestModule.IHuga}}
+
+{{#bool}}
+    {{varStr}}
+    {{#testArr}}
+        {{.}}
+        {{varStr}}
+    {{/testArr}}
+{{/bool}}
